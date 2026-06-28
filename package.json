@@ -1,0 +1,10 @@
+{
+  "name": "image-gallery-pages",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static image gallery generator for GitHub Pages",
+  "scripts": {
+    "generate": "node scripts/generate-site.mjs",
+    "check": "node scripts/generate-site.mjs --check"
+  }
+}

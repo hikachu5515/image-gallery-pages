@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <p class="eyebrow">Static gallery</p>
+        <h1>Image Gallery</h1>
+        <p class="intro">
+          Browse folders generated from the <code>images/</code> directory.
+        </p>
+      </header>
+      <main class="layout">
+        <aside class="sidebar">
+          <div class="sidebar-head">
+            <h2>Folders</h2>
+            <a id="home-link" href="./">Top</a>
+          </div>
+          <nav id="folder-list" class="folder-list" aria-label="Gallery folders"></nav>
+        </aside>
+        <section class="content">
+          <div class="content-head">
+            <div>
+              <p class="section-label">Current folder</p>
+              <h2 id="view-title">All folders</h2>
+            </div>
+            <p id="view-meta" class="view-meta"></p>
+          </div>
+          <div id="empty-state" class="empty-state" hidden></div>
+          <div id="gallery-grid" class="gallery-grid"></div>
+        </section>
+      </main>
+    </div>
+    <template id="folder-card-template">
+      <a class="folder-card"></a>
+    </template>
+    <template id="image-card-template">
+      <article class="image-card">
+        <a class="image-link" target="_blank" rel="noreferrer">
+          <img class="image-thumb" loading="lazy" alt="" />
+        </a>
+        <div class="image-meta">
+          <p class="image-name"></p>
+          <p class="image-file"></p>
+        </div>
+      </article>
+    </template>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
