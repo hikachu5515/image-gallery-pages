@@ -1,38 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image Gallery</title>
+    <title>画像ギャラリー</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div class="shell">
-      <header class="hero">
-        <p class="eyebrow">Static gallery</p>
-        <h1>Image Gallery</h1>
-        <p class="intro">
-          Browse folders generated from the <code>images/</code> directory.
-        </p>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="shell header-bar">
+          <a class="brand" href="./">
+            <span class="brand-mark">IG</span>
+            <span class="brand-text">画像ギャラリー</span>
+          </a>
+          <nav class="site-nav" aria-label="主要ナビゲーション">
+            <a href="#gallery">ギャラリー</a>
+            <a href="#folders">フォルダ</a>
+            <a id="home-link" href="./">トップ</a>
+          </nav>
+        </div>
       </header>
-      <main class="layout">
-        <aside class="sidebar">
-          <div class="sidebar-head">
-            <h2>Folders</h2>
-            <a id="home-link" href="./">Top</a>
-          </div>
-          <nav id="folder-list" class="folder-list" aria-label="Gallery folders"></nav>
-        </aside>
-        <section class="content">
-          <div class="content-head">
-            <div>
-              <p class="section-label">Current folder</p>
-              <h2 id="view-title">All folders</h2>
+
+      <main>
+        <section class="hero">
+          <div class="shell hero-panel">
+            <div class="hero-copy">
+              <p class="eyebrow">画像ギャラリー</p>
+              <h1>落ち着いた空気感で、画像を見やすく整理したギャラリー。</h1>
+              <p class="intro">
+                <code>images/</code> ディレクトリから生成されたフォルダを、暗めのヒーローと
+                余白を活かした白いパネル構成で閲覧できます。
+              </p>
             </div>
-            <p id="view-meta" class="view-meta"></p>
+            <div class="hero-stats" aria-label="ギャラリー概要">
+              <article class="stat-card">
+                <p class="stat-label">フォルダ</p>
+                <p id="folder-count" class="stat-value">0</p>
+              </article>
+              <article class="stat-card">
+                <p class="stat-label">画像</p>
+                <p id="image-count" class="stat-value">0</p>
+              </article>
+            </div>
           </div>
-          <div id="empty-state" class="empty-state" hidden></div>
-          <div id="gallery-grid" class="gallery-grid"></div>
+        </section>
+
+        <section class="shell content-wrap" id="gallery">
+          <div class="content-panel">
+            <aside class="sidebar" id="folders">
+              <div class="sidebar-head">
+                <div>
+                  <p class="section-label">ナビゲーション</p>
+                  <h2>フォルダ</h2>
+                </div>
+              </div>
+              <nav id="folder-list" class="folder-list" aria-label="ギャラリーフォルダ"></nav>
+            </aside>
+            <section class="content">
+              <div class="content-head">
+                <div>
+                  <p class="section-label">表示中</p>
+                  <h2 id="view-title">すべてのフォルダ</h2>
+                </div>
+                <p id="view-meta" class="view-meta"></p>
+              </div>
+              <div id="empty-state" class="empty-state" hidden></div>
+              <div id="gallery-grid" class="gallery-grid"></div>
+            </section>
+          </div>
         </section>
       </main>
     </div>

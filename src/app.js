@@ -5,6 +5,8 @@ const viewMeta = document.getElementById("view-meta");
 const emptyState = document.getElementById("empty-state");
 const folderCardTemplate = document.getElementById("folder-card-template");
 const imageCardTemplate = document.getElementById("image-card-template");
+const folderCount = document.getElementById("folder-count");
+const imageCount = document.getElementById("image-count");
 
 const params = new URLSearchParams(window.location.search);
 const selectedFolder = params.get("folder");
@@ -18,6 +20,12 @@ function setEmpty(message) {
 function clearEmpty() {
   emptyState.hidden = true;
   emptyState.textContent = "";
+}
+
+function renderSummary(folders) {
+  const totalImages = folders.reduce((count, folder) => count + folder.images.length, 0);
+  folderCount.textContent = String(folders.length);
+  imageCount.textContent = String(totalImages);
 }
 
 function renderFolders(folders, currentFolder) {
@@ -36,14 +44,14 @@ function renderFolders(folders, currentFolder) {
 
 function renderOverview(folders) {
   clearEmpty();
-  viewTitle.textContent = "All folders";
-  viewMeta.textContent = `${folders.length} folder${folders.length === 1 ? "" : "s"}`;
+  viewTitle.textContent = "すべてのフォルダ";
+  viewMeta.textContent = `${folders.length} フォルダ`;
 
   const fragment = document.createDocumentFragment();
   for (const folder of folders) {
     const node = folderCardTemplate.content.firstElementChild.cloneNode(true);
     node.href = `./?folder=${encodeURIComponent(folder.name)}`;
-    node.innerHTML = `<strong>${folder.name}</strong><span>${folder.images.length} image${folder.images.length === 1 ? "" : "s"}</span>`;
+    node.innerHTML = `<strong>${folder.name}</strong><span>${folder.images.length} 枚</span>`;
     fragment.appendChild(node);
   }
   galleryGrid.replaceChildren(fragment);
@@ -52,10 +60,10 @@ function renderOverview(folders) {
 function renderFolder(folder) {
   clearEmpty();
   viewTitle.textContent = folder.name;
-  viewMeta.textContent = `${folder.images.length} image${folder.images.length === 1 ? "" : "s"}`;
+  viewMeta.textContent = `${folder.images.length} 枚`;
 
   if (folder.images.length === 0) {
-    setEmpty("No images found in this folder.");
+    setEmpty("このフォルダには画像がありません。");
     return;
   }
 
@@ -88,11 +96,12 @@ async function main() {
 
     const manifest = await response.json();
     const folders = manifest.folders ?? [];
+    renderSummary(folders);
     renderFolders(folders, selectedFolder);
 
     if (folders.length === 0) {
-      setEmpty("No folders found. Add images under images/<folder-name>/ and regenerate.");
-      viewTitle.textContent = "No folders";
+      setEmpty("フォルダが見つかりません。images/<folder-name>/ に画像を追加して再生成してください。");
+      viewTitle.textContent = "フォルダがありません";
       viewMeta.textContent = "";
       return;
     }
@@ -104,17 +113,17 @@ async function main() {
 
     const folder = folders.find((entry) => entry.name === selectedFolder);
     if (!folder) {
-      viewTitle.textContent = "Folder not found";
+      viewTitle.textContent = "フォルダが見つかりません";
       viewMeta.textContent = "";
-      setEmpty(`Folder "${selectedFolder}" was not found in manifest.json.`);
+      setEmpty(`manifest.json にフォルダ「${selectedFolder}」が見つかりませんでした。`);
       return;
     }
 
     renderFolder(folder);
   } catch (error) {
-    viewTitle.textContent = "Load error";
+    viewTitle.textContent = "読み込みエラー";
     viewMeta.textContent = "";
-    setEmpty(error instanceof Error ? error.message : "Unknown error");
+    setEmpty(error instanceof Error ? error.message : "不明なエラーです。");
   }
 }
 
