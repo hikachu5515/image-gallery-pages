@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星環リノベーション株式会社 | 施工事例</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <div class="shell header-bar">
+          <a class="brand" href="./index.html">
+            <span class="brand-mark">SR</span>
+            <span class="brand-text">星環リノベーション株式会社</span>
+          </a>
+          <nav class="site-nav" aria-label="主要ナビゲーション">
+            <a href="./index.html">トップ</a>
+            <a href="./about.html">企業概要</a>
+            <a class="is-active" href="./works.html">施工事例</a>
+            <a href="./contact.html">お問い合わせ</a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="page-main">
+        <section class="shell page-intro">
+          <p class="eyebrow">Works</p>
+          <h1>案件ごとに before / after を分けて比較できる施工事例ページです。</h1>
+          <p class="lead">
+            画像は <code>images/&lt;案件&gt;/before</code> と
+            <code>images/&lt;案件&gt;/after</code> の構成から自動で読み込みます。
+          </p>
+        </section>
+
+        <section class="shell section-grid">
+          <article class="panel-card panel-card-large">
+            <p class="section-label">Structure</p>
+            <h2>今回使う画像構成</h2>
+            <pre class="code-block"><code>images/
+├ case-01/
+│  ├ before/
+│  └ after/
+└ case-02/
+   ├ before/
+   └ after/</code></pre>
+          </article>
+          <article class="panel-card">
+            <p class="section-label">Overview</p>
+            <h2 id="works-meta-title">施工事例一覧</h2>
+            <p id="works-meta" class="lead compact"></p>
+          </article>
+        </section>
+
+        <section class="shell works-list" id="works-list" aria-live="polite"></section>
+        <div class="shell">
+          <div id="works-empty" class="empty-state" hidden></div>
+        </div>
+      </main>
+
+      <template id="project-template">
+        <article class="project-card">
+          <div class="project-head">
+            <div>
+              <p class="section-label project-label"></p>
+              <h2 class="project-title"></h2>
+              <p class="project-summary"></p>
+            </div>
+            <div class="project-meta"></div>
+          </div>
+          <div class="phase-grid"></div>
+        </article>
+      </template>
+
+      <template id="phase-template">
+        <section class="phase-card">
+          <div class="phase-head">
+            <p class="section-label phase-label"></p>
+            <h3 class="phase-title"></h3>
+          </div>
+          <div class="phase-images"></div>
+        </section>
+      </template>
+
+      <template id="photo-template">
+        <article class="photo-card">
+          <a class="photo-link" target="_blank" rel="noreferrer">
+            <img class="photo-image" loading="lazy" alt="" />
+          </a>
+          <div class="photo-meta">
+            <p class="photo-name"></p>
+            <p class="image-file"></p>
+          </div>
+        </article>
+      </template>
+
+      <footer class="site-footer">
+        <div class="shell footer-bar">
+          <p>星環リノベーション株式会社</p>
+          <p>Works / Before & After</p>
+        </div>
+      </footer>
+    </div>
+
+    <script type="module" src="./works.js"></script>
+  </body>
+</html>

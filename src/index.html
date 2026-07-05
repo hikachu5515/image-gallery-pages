@@ -3,116 +3,107 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>画像ギャラリー</title>
+    <title>星環リノベーション株式会社 | トップ</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="page-shell">
       <header class="site-header">
         <div class="shell header-bar">
-          <a class="brand" href="./">
-            <span class="brand-mark">IG</span>
-            <span class="brand-text">画像ギャラリー</span>
+          <a class="brand" href="./index.html">
+            <span class="brand-mark">SR</span>
+            <span class="brand-text">星環リノベーション株式会社</span>
           </a>
           <nav class="site-nav" aria-label="主要ナビゲーション">
-            <a href="#gallery">ギャラリー</a>
-            <a href="#folders">フォルダ</a>
-            <a id="home-link" href="./">トップ</a>
+            <a class="is-active" href="./index.html">トップ</a>
+            <a href="./about.html">企業概要</a>
+            <a href="./works.html">施工事例</a>
+            <a href="./contact.html">お問い合わせ</a>
           </nav>
         </div>
       </header>
 
       <main>
-        <section class="hero">
+        <section class="hero hero-home">
           <div class="shell hero-panel">
             <div class="hero-orbit hero-orbit-a" aria-hidden="true"></div>
             <div class="hero-orbit hero-orbit-b" aria-hidden="true"></div>
             <div class="hero-glow hero-glow-a" aria-hidden="true"></div>
             <div class="hero-glow hero-glow-b" aria-hidden="true"></div>
             <div class="hero-copy">
-              <p class="eyebrow">Orbit Archive</p>
-              <h1>宇宙を感じる、静かで立体的なイメージギャラリー。</h1>
+              <p class="eyebrow">Space Inspired Reform</p>
+              <h1>暮らしを再設計する、都市型リフォームのホームページ。</h1>
               <p class="intro">
-                <code>images/</code> ディレクトリから生成されたフォルダを、深いネイビーの背景、
-                発光するアクセント、ガラス調のカードで整理して表示します。
+                星環リノベーション株式会社は、マンション・戸建ての内装改修、
+                水回り更新、空間再設計を行う仮想のリフォーム会社です。
+                施工事例、企業情報、お問い合わせ導線まで一つのサイトで整理しています。
               </p>
-              <div class="hero-tags" aria-label="デザイン要素">
-                <span>Deep Space</span>
-                <span>Glass Layer</span>
-                <span>Modern Orbit</span>
+              <div class="hero-actions">
+                <a class="button-primary" href="./works.html">施工事例を見る</a>
+                <a class="button-secondary" href="./contact.html">相談する</a>
               </div>
             </div>
-            <div class="hero-stats" aria-label="ギャラリー概要">
-              <article class="stat-card">
-                <p class="stat-label">フォルダ</p>
-                <p id="folder-count" class="stat-value">0</p>
-              </article>
-              <article class="stat-card">
-                <p class="stat-label">画像</p>
-                <p id="image-count" class="stat-value">0</p>
-              </article>
+            <div class="hero-side-card">
+              <p class="section-label">Service Scope</p>
+              <ul class="hero-list">
+                <li>マンション全面改修</li>
+                <li>戸建て部分リフォーム</li>
+                <li>水回り・収納・内装更新</li>
+                <li>設計提案から施工管理まで一貫対応</li>
+              </ul>
             </div>
           </div>
         </section>
 
-        <section class="shell feature-strip" aria-label="宇宙テーマの特徴">
+        <section class="shell feature-strip" aria-label="主要導線">
           <article class="feature-card">
-            <p class="section-label">Visual</p>
-            <h2>星雲のようなグラデーション</h2>
-            <p>背景は単色ではなく、暗い宇宙空間の奥行きを感じる光のレイヤーで構成。</p>
+            <p class="section-label">Top</p>
+            <h2>会社の全体像</h2>
+            <p>このサイトで見られる内容を短く把握し、必要なページへすぐ移動できます。</p>
+            <a class="text-link" href="./about.html">企業概要へ</a>
           </article>
           <article class="feature-card">
-            <p class="section-label">Interface</p>
-            <h2>ガラス調のモダンUI</h2>
-            <p>半透明パネルと細いラインで、軽さと未来感を両立した見た目に調整。</p>
+            <p class="section-label">Works</p>
+            <h2>Before / After で比較</h2>
+            <p>案件ごとに改修前後の写真を並べ、変化が分かりやすい構成で掲載します。</p>
+            <a class="text-link" href="./works.html">施工事例へ</a>
           </article>
           <article class="feature-card">
-            <p class="section-label">Motion Feel</p>
-            <h2>軌道を意識した構図</h2>
-            <p>円弧や発光点を控えめに配置して、宇宙テーマを直球すぎずに表現。</p>
+            <p class="section-label">Contact</p>
+            <h2>相談導線を明確化</h2>
+            <p>フォームへのリンクに加え、将来のスプレッドシート管理や通知運用も見据えます。</p>
+            <a class="text-link" href="./contact.html">お問い合わせへ</a>
           </article>
         </section>
 
-        <section class="shell content-wrap" id="gallery">
-          <div class="content-panel">
-            <aside class="sidebar" id="folders">
-              <div class="sidebar-head">
-                <div>
-                  <p class="section-label">ナビゲーション</p>
-                  <h2>フォルダ</h2>
-                </div>
-              </div>
-              <nav id="folder-list" class="folder-list" aria-label="ギャラリーフォルダ"></nav>
-            </aside>
-            <section class="content">
-              <div class="content-head">
-                <div>
-                  <p class="section-label">表示中</p>
-                  <h2 id="view-title">すべてのフォルダ</h2>
-                </div>
-                <p id="view-meta" class="view-meta"></p>
-              </div>
-              <div id="empty-state" class="empty-state" hidden></div>
-              <div id="gallery-grid" class="gallery-grid"></div>
-            </section>
-          </div>
+        <section class="shell section-grid">
+          <article class="panel-card panel-card-large">
+            <p class="section-label">Company Mission</p>
+            <h2>“整える” ではなく、“暮らしを更新する”。</h2>
+            <p>
+              家族構成や働き方の変化に合わせて、空間そのものの役割を再設計します。
+              意匠だけでなく、動線、収納、メンテナンス性まで含めて提案する想定です。
+            </p>
+          </article>
+          <article class="panel-card">
+            <p class="section-label">Quick Access</p>
+            <h2>ページ構成</h2>
+            <ul class="plain-list">
+              <li><a href="./index.html">トップ</a></li>
+              <li><a href="./about.html">企業概要</a></li>
+              <li><a href="./works.html">施工事例</a></li>
+              <li><a href="./contact.html">お問い合わせ</a></li>
+            </ul>
+          </article>
         </section>
       </main>
-    </div>
-    <template id="folder-card-template">
-      <a class="folder-card"></a>
-    </template>
-    <template id="image-card-template">
-      <article class="image-card">
-        <a class="image-link" target="_blank" rel="noreferrer">
-          <img class="image-thumb" loading="lazy" alt="" />
-        </a>
-        <div class="image-meta">
-          <p class="image-name"></p>
-          <p class="image-file"></p>
+
+      <footer class="site-footer">
+        <div class="shell footer-bar">
+          <p>星環リノベーション株式会社</p>
+          <p>Tokyo / Renovation / Interior Planning</p>
         </div>
-      </article>
-    </template>
-    <script type="module" src="./app.js"></script>
+      </footer>
+    </div>
   </body>
 </html>
