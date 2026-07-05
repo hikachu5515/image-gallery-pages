@@ -42,6 +42,12 @@ Apps Script でよく入れる項目:
 - 対応ステータス
 - 担当者
 
+推奨シート構成:
+
+- スプレッドシート名: `星環リノベーション_問い合わせ管理`
+- タブ名: `responses`
+- ヘッダー: `inquiry_id`, `received_at`, `name`, `email`, `phone`, `area`, `property_type`, `category`, `message`, `preferred_date`, `status`, `assignee`, `reply_sent_at`, `internal_note`
+
 ## 3. Microsoft Forms を使う場合
 
 おすすめ構成:

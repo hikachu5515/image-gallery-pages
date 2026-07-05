@@ -88,6 +88,8 @@ images/
 - `inquiry-sheet-template.csv`: 問い合わせ管理シートのひな形
 - `google-apps-script-sample.js`: Google Form 送信後に通知と自動返信を行う Apps Script サンプル
 
+Google 運用の受け皿としては、`responses` タブを持つ問い合わせ管理シートを前提にしています。
+
 ## ローカル確認
 
 1. `npm run generate`
