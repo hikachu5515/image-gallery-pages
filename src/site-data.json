@@ -1,0 +1,14 @@
+{
+  "company": {
+    "name": "星環リノベーション株式会社",
+    "phone": "03-1234-5678",
+    "email": "contact@seikan-renovation.example",
+    "hours": "平日 9:30 - 18:30"
+  },
+  "contact": {
+    "preferredPlatform": "google",
+    "googleFormUrl": "https://docs.google.com/forms/",
+    "microsoftFormUrl": "https://forms.office.com/",
+    "notes": "実運用時は作成済みフォームの共有URLに差し替えてください。"
+  }
+}

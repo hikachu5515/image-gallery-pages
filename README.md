@@ -1,72 +1,99 @@
-# image-gallery-pages
+# seikan-renovation-site
 
-Static image gallery for GitHub Pages. The site is generated from the folder structure under `images/`.
+仮想のリフォーム会社「星環リノベーション株式会社」の静的サイトです。  
+GitHub Pages にデプロイする前提で、以下の 4 ページ構成になっています。
 
-## Features
+- トップ
+- 企業概要
+- 施工事例
+- お問い合わせ
 
-- Shows folder links on the top page.
-- Shows images inside the selected folder.
-- Rebuilds `dist/manifest.json` and the deployable static site with one command.
-- Deploys automatically to GitHub Pages with GitHub Actions.
-- Uses only Node.js built-ins. No runtime dependencies.
+## 特徴
 
-## Directory structure
+- 紫ベースの宇宙テーマで、モダンなコーポレートサイトとして整えている
+- 施工事例は `before / after` のフォルダ構成から自動で `manifest.json` を生成する
+- 問い合わせページは Google Forms / Microsoft Forms の URL を設定ファイルで差し替えできる
+- GitHub Actions で GitHub Pages に自動デプロイできる
+
+## ディレクトリ構成
 
 ```text
 images/
-  A/
-    sample-a-1.png
-    sample-a-2.png
-  B/
-    sample-b-1.png
-    sample-b-2.png
+  case-01/
+    before/
+      living-before.png
+    after/
+      living-after.png
+  case-02/
+    before/
+      kitchen-before.png
+    after/
+      kitchen-after.png
 src/
   index.html
-  app.js
+  about.html
+  works.html
+  contact.html
+  contact.js
+  works.js
+  site-data.json
   styles.css
 scripts/
   generate-site.mjs
+docs/
+  contact-ops.md
 dist/
   ...
 ```
 
-## Local usage
+## 施工事例の追加方法
 
-1. Run `npm run generate`
-2. Start a local server from the project root
-   - Example: `python -m http.server 8000`
-3. Open `http://localhost:8000/dist/`
-
-## Add images
-
-1. Add image files under `images/<folder-name>/`
-2. Run `npm run generate`
-3. Commit and push to `main`
-4. GitHub Actions deploys the updated `dist/` to Pages
-
-## Regeneration only workflow
-
-When images are added or removed, no code changes are required. Regenerate the site and commit the updated source images.
-
-## GitHub Pages setup and URL confirmation
-
-1. Push this repository to GitHub
-2. Wait for the `Deploy Pages` workflow to finish
-3. Open repository `Settings` -> `Pages`
-4. Confirm that the source is `GitHub Actions`
-5. Confirm the public URL shown on the Pages screen
-
-The expected URL format is:
+案件ごとに以下のような構成で画像を置きます。
 
 ```text
-https://<github-user>.github.io/<repository-name>/
+images/
+└ case-03/
+   ├ before/
+   │  ├ room-before-1.jpg
+   │  └ room-before-2.jpg
+   └ after/
+      ├ room-after-1.jpg
+      └ room-after-2.jpg
 ```
 
-## Commands
+その後、以下を実行します。
 
-- `npm run generate`: rebuilds `dist/` and `dist/manifest.json`
-- `npm run check`: verifies that `dist/manifest.json` matches the current `images/` folders
+1. `npm run generate`
+2. `npm run check`
 
-## Model switch log
+## 問い合わせフォームの差し替え
 
-- No model switching was required for this implementation. The work stayed on the current coding model.
+`src/site-data.json` の URL を実際のフォームに差し替えてください。
+
+```json
+{
+  "contact": {
+    "preferredPlatform": "google",
+    "googleFormUrl": "https://docs.google.com/forms/d/e/xxxxx/viewform",
+    "microsoftFormUrl": "https://forms.office.com/r/xxxxx"
+  }
+}
+```
+
+フォーム送信後のスプレッドシート管理や通知メール運用は [docs/contact-ops.md](docs/contact-ops.md) に整理しています。
+
+## ローカル確認
+
+1. `npm run generate`
+2. プロジェクトルートでローカルサーバーを起動
+   - 例: `python -m http.server 8000`
+3. `http://localhost:8000/dist/` を開く
+
+## コマンド
+
+- `npm run generate`: `dist/` と `manifest.json` を再生成
+- `npm run check`: 現在の `images/` 構成と `dist/manifest.json` が一致するか確認
+
+## GitHub Pages
+
+`main` ブランチへ push すると、`.github/workflows/deploy-pages.yml` により GitHub Pages へ自動デプロイされます。

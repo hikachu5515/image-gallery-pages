@@ -27,9 +27,7 @@
         <section class="shell page-intro">
           <p class="eyebrow">Contact</p>
           <h1>フォーム導線を設け、将来的な問い合わせ管理まで見据えたページにしています。</h1>
-          <p class="lead">
-            実運用では、発行済みの Google Form または Microsoft Forms の URL に差し替えて利用します。
-          </p>
+          <p id="contact-lead" class="lead"></p>
         </section>
 
         <section class="shell section-grid">
@@ -37,26 +35,52 @@
             <p class="section-label">Form Links</p>
             <h2>問い合わせフォーム導線</h2>
             <div class="button-group">
-              <a class="button-primary" href="https://docs.google.com/forms/" target="_blank" rel="noreferrer">
+              <a
+                id="google-form-link"
+                class="button-primary"
+                href="https://docs.google.com/forms/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Google Form を使う
               </a>
-              <a class="button-secondary" href="https://forms.office.com/" target="_blank" rel="noreferrer">
+              <a
+                id="microsoft-form-link"
+                class="button-secondary"
+                href="https://forms.office.com/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Microsoft Forms を使う
               </a>
             </div>
-            <p class="support-note">
-              今はサービス入口へのリンクです。実際の公開時は、作成したフォームの共有 URL に差し替えます。
-            </p>
+            <p id="contact-note" class="support-note"></p>
           </article>
 
           <article class="panel-card">
             <p class="section-label">Direct Contact</p>
             <h2>参考連絡先</h2>
-            <ul class="plain-list">
+            <ul id="contact-direct" class="plain-list">
               <li>電話: 03-1234-5678</li>
               <li>メール: contact@seikan-renovation.example</li>
               <li>受付時間: 平日 9:30 - 18:30</li>
             </ul>
+          </article>
+        </section>
+
+        <section class="shell section-grid contact-guide-grid">
+          <article class="panel-card panel-card-large">
+            <p class="section-label">Recommendation</p>
+            <h2 id="recommended-platform-title">おすすめ運用</h2>
+            <p id="recommended-platform-body" class="lead compact"></p>
+          </article>
+          <article class="panel-card">
+            <p class="section-label">Repository Guide</p>
+            <h2>実装メモ</h2>
+            <p class="support-note">
+              フォーム設定と運用手順はリポジトリ内の
+              <code>src/site-data.json</code> と <code>docs/contact-ops.md</code> に整理しています。
+            </p>
           </article>
         </section>
 
@@ -86,5 +110,6 @@
         </div>
       </footer>
     </div>
+    <script type="module" src="./contact.js"></script>
   </body>
 </html>
