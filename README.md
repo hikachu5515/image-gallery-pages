@@ -35,6 +35,8 @@ src/
   works.html
   contact.html
   contact.js
+  inquiry-sheet-template.csv
+  google-apps-script-sample.js
   works.js
   site-data.json
   styles.css
@@ -81,6 +83,10 @@ images/
 ```
 
 フォーム送信後のスプレッドシート管理や通知メール運用は [docs/contact-ops.md](docs/contact-ops.md) に整理しています。
+また、公開サイト上から直接参照できるテンプレートとして以下も置いています。
+
+- `inquiry-sheet-template.csv`: 問い合わせ管理シートのひな形
+- `google-apps-script-sample.js`: Google Form 送信後に通知と自動返信を行う Apps Script サンプル
 
 ## ローカル確認
 

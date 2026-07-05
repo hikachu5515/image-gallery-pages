@@ -71,3 +71,5 @@ Apps Script でよく入れる項目:
 - 表示設定: `src/site-data.json`
 - 問い合わせページ本体: `src/contact.html`
 - 問い合わせページの設定反映: `src/contact.js`
+- 問い合わせ管理シートひな形: `src/inquiry-sheet-template.csv`
+- Google Apps Script サンプル: `src/google-apps-script-sample.js`

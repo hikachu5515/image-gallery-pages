@@ -344,6 +344,15 @@ pre {
   margin-top: 6px;
 }
 
+.resource-list a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.resource-list a:hover {
+  text-decoration: underline;
+}
+
 .feature-strip {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
