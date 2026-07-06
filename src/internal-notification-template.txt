@@ -1,0 +1,17 @@
+新しい問い合わせが届きました。
+
+問い合わせID: {{inquiry_id}}
+受付日時: {{received_at}}
+氏名: {{name}}
+メールアドレス: {{email}}
+電話番号: {{phone}}
+エリア: {{area}}
+物件種別: {{property_type}}
+カテゴリ: {{category}}
+希望時期: {{preferred_date}}
+
+相談内容:
+{{message}}
+
+対応メモ:
+{{internal_note}}

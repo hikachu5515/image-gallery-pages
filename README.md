@@ -85,8 +85,11 @@ images/
 フォーム送信後のスプレッドシート管理や通知メール運用は [docs/contact-ops.md](docs/contact-ops.md) に整理しています。
 また、公開サイト上から直接参照できるテンプレートとして以下も置いています。
 
+- `contact-form-spec.txt`: フォーム項目仕様の簡易版
 - `inquiry-sheet-template.csv`: 問い合わせ管理シートのひな形
 - `google-apps-script-sample.js`: Google Form 送信後に通知と自動返信を行う Apps Script サンプル
+- `auto-reply-template.txt`: 自動返信メール文面
+- `internal-notification-template.txt`: 社内通知メール文面
 
 Google 運用の受け皿としては、`responses` タブを持つ問い合わせ管理シートを前提にしています。
 

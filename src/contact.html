@@ -79,6 +79,11 @@
             <h2>運用テンプレート</h2>
             <ul class="plain-list resource-list">
               <li>
+                <a href="./contact-form-spec.txt" target="_blank" rel="noreferrer">
+                  フォーム項目仕様
+                </a>
+              </li>
+              <li>
                 <a href="./inquiry-sheet-template.csv" target="_blank" rel="noreferrer">
                   問い合わせ管理シート CSV
                 </a>
@@ -88,10 +93,48 @@
                   Google Apps Script サンプル
                 </a>
               </li>
+              <li>
+                <a href="./auto-reply-template.txt" target="_blank" rel="noreferrer">
+                  自動返信メール文面
+                </a>
+              </li>
+              <li>
+                <a href="./internal-notification-template.txt" target="_blank" rel="noreferrer">
+                  社内通知メール文面
+                </a>
+              </li>
             </ul>
             <p class="support-note">
-              詳しい手順はリポジトリ内の <code>docs/contact-ops.md</code> に整理しています。
+              詳しい手順はリポジトリ内の <code>docs/contact-ops.md</code> と
+              <code>docs/contact-form-spec.md</code> に整理しています。
             </p>
+          </article>
+        </section>
+
+        <section class="shell section-grid">
+          <article class="panel-card panel-card-large">
+            <p class="section-label">Form Fields</p>
+            <h2>フォームで聞く内容</h2>
+            <ul class="plain-list">
+              <li>氏名</li>
+              <li>メールアドレス</li>
+              <li>電話番号</li>
+              <li>住所またはエリア</li>
+              <li>物件種別</li>
+              <li>ご相談カテゴリ</li>
+              <li>ご相談内容</li>
+              <li>希望時期 / 現地調査希望</li>
+            </ul>
+          </article>
+          <article class="panel-card">
+            <p class="section-label">After Submit</p>
+            <h2>送信後の流れ</h2>
+            <ul class="plain-list">
+              <li>シートへ問い合わせ内容を記録</li>
+              <li>担当者へ通知メール送信</li>
+              <li>送信者へ受付完了メール送信</li>
+              <li>対応ステータスを手動または自動で更新</li>
+            </ul>
           </article>
         </section>
 

@@ -1,0 +1,19 @@
+{{name}} 様
+
+このたびは、星環リノベーション株式会社へお問い合わせいただきありがとうございます。
+以下の内容で受け付けました。
+
+問い合わせID: {{inquiry_id}}
+ご相談カテゴリ: {{category}}
+物件種別: {{property_type}}
+ご希望エリア: {{area}}
+希望時期: {{preferred_date}}
+
+ご相談内容:
+{{message}}
+
+内容を確認のうえ、2営業日以内を目安に担当者よりご連絡いたします。
+
+星環リノベーション株式会社
+TEL: 03-1234-5678
+MAIL: contact@seikan-renovation.example

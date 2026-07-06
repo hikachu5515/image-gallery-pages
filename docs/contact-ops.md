@@ -72,10 +72,18 @@ Apps Script でよく入れる項目:
 - 希望時期
 - 現地調査希望の有無
 
+詳細な項目仕様:
+
+- `docs/contact-form-spec.md`
+- 公開用テキスト版: `src/contact-form-spec.txt`
+
 ## 5. このリポジトリでの扱い
 
 - 表示設定: `src/site-data.json`
 - 問い合わせページ本体: `src/contact.html`
 - 問い合わせページの設定反映: `src/contact.js`
+- フォーム項目仕様: `docs/contact-form-spec.md`
 - 問い合わせ管理シートひな形: `src/inquiry-sheet-template.csv`
 - Google Apps Script サンプル: `src/google-apps-script-sample.js`
+- 自動返信メール文面: `src/auto-reply-template.txt`
+- 社内通知メール文面: `src/internal-notification-template.txt`
