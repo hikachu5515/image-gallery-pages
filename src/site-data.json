@@ -7,8 +7,8 @@
   },
   "contact": {
     "preferredPlatform": "google",
-    "googleFormUrl": "https://docs.google.com/forms/",
+    "googleFormUrl": "https://docs.google.com/forms/d/e/1FAIpQLSfWz2j_dv31_wX12RxV_8GQK-4v8DYxxnDuKPL9Jd0-VNmtxw/viewform?usp=publish-editor",
     "microsoftFormUrl": "https://forms.office.com/",
-    "notes": "実運用時は作成済みフォームの共有URLに差し替えてください。"
+    "notes": "Google Form の共有 URL を設定済みです。Microsoft Forms を使う場合は必要に応じて差し替えてください。"
   }
 }
